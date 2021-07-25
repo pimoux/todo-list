@@ -1,38 +1,181 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+  --darkgray: #17252A;
+  --dark-bluegreen: #2B7A78;
+  --bluegreen: #3AAFA9;
+  --whitegray: #DEF2F1;
+  --white: #FEFFFF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--bluegreen);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#todo-container{
+  background-color: var(--dark-bluegreen);
+  padding: 1rem 5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.4);
+  box-shadow: 0 0 20px 5px rgba(0,0,0,0.4);
+}
+
+.Header{
+  display: flex;
+  width: 100%;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--white);
 }
 
-.App-link {
-  color: #61dafb;
+.Header h1{
+  margin: 1rem 0 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.isDone{
+  opacity: 0.2;
+}
+
+.Todo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.todo-text{
+  margin: 0 0 0 1rem;
+}
+
+.todo-text-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-trash{
+  margin-right: 1rem;
+  color: var(--darkgray);
+  cursor: pointer;
+}
+
+.check-button{
+  margin-left: 1rem;
+}
+
+.todo-trash:hover, .check-done:hover, .check-undone:hover{
+  opacity: 0.6;
+}
+
+.todo-trash, .check-done, .check-undone{
+  font-size: 1.1em;
+}
+
+.check-done, .check-undone{
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.check-done{
+  color: var(--whitegray);
+}
+
+.check-undone{
+  color: var(--darkgray);
+}
+
+.create-todo{
+  width: 100%;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#todo-text, .react-datepicker-wrapper div input{
+  color: var(--white);
+  font-size: 1.1rem;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--whitegray);
+  font-family: 'Poppins', sans-serif;
+}
+
+.react-datepicker-wrapper div input{
+  margin-left: 1rem;
+}
+
+#todo-text::placeholder{
+  color: lightgray;
+}
+
+#todo-text:focus{
+  border: none;
+  border-bottom: 1px solid var(--whitegray);
+  outline: none;
+}
+
+.error{
+  color: #B10000;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.todo-check-text{
+  display: flex;
+  align-items: center;
+}
+
+#todo-submit{
+  cursor: pointer;
+  background-color: var(--bluegreen);
+  color: var(--darkgray);
+  padding: 0.25rem 1rem;
+  margin-left: 1rem;
+  border: 1px solid var(--darkgray);
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0.5rem;
+}
+
+#todo-submit:hover{
+  opacity:0.8;
+}
+
+#circleProgress {
+  transition: 1s ease;
+}
+
+#circle-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+#circle-container svg circle{
+  fill: var(--dark-bluegreen);
+}
+
+.progress-text{
+  color: var(--white);
 }
