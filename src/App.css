@@ -22,7 +22,7 @@ body{
 
 #todo-container{
   background-color: var(--dark-bluegreen);
-  padding: 1rem 5rem;
+  padding: 1rem 2rem;
   border-radius: 1rem;
   border: 1px solid black;
   -webkit-box-shadow: 0 0 20px 5px rgba(0,0,0,0.4);
@@ -59,13 +59,8 @@ body{
   margin: 0 0 0 1rem;
 }
 
-.todo-text-container{
-  display: flex;
-  flex-direction: column;
-}
-
 .todo-trash{
-  margin-right: 1rem;
+  margin: 0 1rem;
   color: var(--darkgray);
   cursor: pointer;
 }

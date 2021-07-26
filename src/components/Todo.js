@@ -7,20 +7,20 @@ import Check from "./Check";
 export default function Todo({todo, className, onDelete, onChange}) {
     return (
         <div className={className}>
-            <div className="todo-check-text">
+            {todo.done ?
+                <div className="todo-text-container">
+                    <p className='todo-text isDone underline'>{todo.text}</p>
+                    <p className='todo-text isDone'>{todo.date}</p>
+                </div> :
+                <div className="todo-text-container">
+                    <p className='todo-text underline'>{todo.text}</p>
+                    <p className='todo-text'>{todo.date}</p>
+                </div>
+            }
+            <div className="todo-actions">
                 <Check checked={todo.done} onChange={() => onChange(todo)}/>
-                {todo.done ?
-                    <div className="todo-text-container">
-                        <p className='todo-text isDone underline'>{todo.text}</p>
-                        <p className='todo-text isDone'>{todo.date}</p>
-                    </div> :
-                    <div className="todo-text-container">
-                        <p className='todo-text underline'>{todo.text}</p>
-                        <p className='todo-text'>{todo.date}</p>
-                    </div>
-                }
+                <FontAwesomeIcon className="todo-trash" icon={faTrash} onClick={() => onDelete(todo)}/>
             </div>
-            <FontAwesomeIcon className="todo-trash" icon={faTrash} onClick={() => onDelete(todo)}/>
         </div>
     )
 }

@@ -15,7 +15,7 @@ const jsonFetch = (method, url, data = {}) => {
 
 module.exports = {
     getAll: () => {
-        return fetch(`${process.env.REACT_APP_API_URL}/todos`)
+        return fetch(`${process.env.REACT_APP_API_URL}todos`)
             .then(res => res.json())
     },
 
@@ -25,14 +25,14 @@ module.exports = {
             done: done,
             date: date
         }
-        return jsonFetch(POST, `${process.env.REACT_APP_API_URL}/todos`, todo);
+        return jsonFetch(POST, `${process.env.REACT_APP_API_URL}todos`, todo);
     },
 
     update: (todo) => {
-        return jsonFetch(PATCH, `${process.env.REACT_APP_API_URL}/todos/${todo.id}`, todo)
+        return jsonFetch(PATCH, `${process.env.REACT_APP_API_URL}todos/${todo.id}`, todo)
     },
 
     remove: (todo) => {
-        return jsonFetch(DELETE, `${process.env.REACT_APP_API_URL}/todos/${todo.id}`);
+        return jsonFetch(DELETE, `${process.env.REACT_APP_API_URL}todos/${todo.id}`);
     }
 }
