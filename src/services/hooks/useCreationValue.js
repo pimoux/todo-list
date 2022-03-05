@@ -14,7 +14,7 @@ export default function useCreationValue(onSubmit) {
 
     const handleSubmit = (e, text, date) => {
         const options = { weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'};
-        const formattedDate = date.toLocaleDateString('fr-FR', options);
+        const formattedDate = date.toLocaleDateString('en-EN', options);
         onSubmit(e, text, formattedDate);
         setText('');
     }
