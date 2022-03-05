@@ -6,7 +6,7 @@ This is a Todo-list App, made with react and json-server.
 
 ### Features
 
--(fake) API
+-(fake) API <br />
 -CRUD for todos
 
 ### How to test it ?
